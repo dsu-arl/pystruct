@@ -155,7 +155,7 @@ class GraphCRF(CRF):
             self.n_states, self.n_features)
 
         #return np.dot(features, unary_params.T)
-	return features.dot(unary_params.T)
+    	return features.dot(unary_params.T)
 
     def joint_feature(self, x, y):
         """Feature vector associated with instance (x, y).
@@ -204,7 +204,7 @@ class GraphCRF(CRF):
                         unary_marginals[edges[:, 1]])
 
         #unaries_acc = np.dot(unary_marginals.T, features)
-	unaries_acc = ((features.T).dot(unary_marginals)).T
+	    unaries_acc = ((features.T).dot(unary_marginals)).T
         if self.directed:
             pw = pw.ravel()
         else:
